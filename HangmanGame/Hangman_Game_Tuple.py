@@ -4,8 +4,10 @@ def play():
     print("****************************")
 
     secret_word = "vitor"
+    ok_words = ["_", "_", "_", "_", "_"]
     hanged = False
     hit = False
+
 
     while (not hanged and not hit):
 
@@ -16,8 +18,12 @@ def play():
 
         for word in secret_word:
             if(attempt.upper() == word.upper()):
-                print("You found the letter(s) {} in the position {}".format(word, word_index))
+                ok_words[word_index] = word
             word_index = word_index + 1
+
+        else:
+            print("WRONG! TRY AGAIN!")
+        print(ok_words)
     print("Game Over")
 
 if (__name__ == "__main__"):
